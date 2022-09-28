@@ -1,6 +1,15 @@
 import { Counter } from "./Counter";
 
-export default function ExerciseProLevel({ data }) {
+export default function ExerciseProLevel({ data, storageId }) {
+
+    // создает или вытаскивает для себя стартовое значение из/в localStorage -start
+    let compleatedStartCount = '0';
+    if (localStorage.getItem(storageId + '-pro')) {
+        compleatedStartCount = localStorage.getItem(storageId + '-pro')
+    } else {
+        localStorage.setItem(storageId + '-pro', '0');
+    }
+    // создает или вытаскивает для себя стартовое значение из/в localStorage -end
 
     return (
         <div className="proLevel">
@@ -17,7 +26,7 @@ export default function ExerciseProLevel({ data }) {
             </p>
             <p className="proAdditionally">{data.additionally}</p>
 
-            <Counter />
+            <Counter compleatedStartCount={compleatedStartCount} storageId={storageId} level={'-pro'}/>
 
             <hr />
         </div>

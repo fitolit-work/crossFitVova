@@ -1,6 +1,15 @@
 import { Counter } from "./Counter";
 
-export default function ExerciseIntermediateLevel({ data }) {
+export default function ExerciseIntermediateLevel({ data, storageId }) {
+
+    // создает или вытаскивает для себя стартовое значение из/в localStorage -start
+    let compleatedStartCount = '0';
+    if (localStorage.getItem(storageId + '-intermediate')) {
+        compleatedStartCount = localStorage.getItem(storageId + '-intermediate')
+    } else {
+        localStorage.setItem(storageId + '-intermediate', '0');
+    }
+    // создает или вытаскивает для себя стартовое значение из/в localStorage -end
 
     return (
         <div className="intermediateLevel">
@@ -17,7 +26,7 @@ export default function ExerciseIntermediateLevel({ data }) {
                 ))}
             </p>
 
-            <Counter />
+            <Counter compleatedStartCount={compleatedStartCount} storageId={storageId} level={'-intermediate'}/>
 
             <hr />
 
