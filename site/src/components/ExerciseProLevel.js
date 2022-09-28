@@ -1,6 +1,6 @@
 import { Counter } from "./Counter";
 
-export default function ExerciseProLevel({ data, storageId }) {
+export default function ExerciseProLevel({ data }) {
 
     return (
         <div className="proLevel">

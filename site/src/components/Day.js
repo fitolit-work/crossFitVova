@@ -10,9 +10,9 @@ export default function Day({ data }) {
         <div className={'trainingDay'}>
             <div className="exerciseBlock">
                 <h2>{data.name}</h2>
-                <ExerciseProLevel data={data.proLevel} />
+                <ExerciseProLevel data={data.proLevel}/>
                 <ExerciseIntermediateLevel data={data.intermediateLevel} />
-                <ExerciseBeginnerLevel data={data.beginnerLevel}/>
+                <ExerciseBeginnerLevel data={data.beginnerLevel} storageId={data.id}/>
             </div>
         </div>
 
