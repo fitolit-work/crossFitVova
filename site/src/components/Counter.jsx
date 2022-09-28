@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 
-export const Counter = () => {
-    const [completed, setCompleted] = useState(0)
+export const Counter = ({compleatedStartCount}) => {
+    const [completed, setCompleted] = useState(+compleatedStartCount)
 
     const incrementCompleted = () => {
         setCompleted(completed + 1)
