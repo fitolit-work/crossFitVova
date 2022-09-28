@@ -26,7 +26,7 @@ export default function ExerciseBeginnerLevel({ data, storageId }) {
                     <span key={i}>{gender.gender} {gender.weight} {gender.unit} </span>
                 ))}
             </p>
-                    <Counter compleatedStartCount={compleatedStartCount}/>
+                    <Counter compleatedStartCount={compleatedStartCount} storageId={storageId}/>
             <hr />
 
         </div>
